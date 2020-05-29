@@ -25,7 +25,9 @@ def InstallReq(NameOfNewDir):
 	os.chdir(HomeDir)
 
 def main():
-	url = "https://github.com/ArthurG/Kijiji-Repost-Headless"
+	# url = "https://github.com/ArthurG/Kijiji-Repost-Headless"
+	print("Input URL: ")
+	url = input()
 	NameOfNewDir = url.split('/')[-1]
 	MakeClone(url)
 	InstallReq(NameOfNewDir)
