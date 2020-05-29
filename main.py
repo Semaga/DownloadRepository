@@ -6,9 +6,9 @@ def MakeClone(url):
 	NameOfNewDir = url.split('/')[-1]
 	try:
 		os.system(comandInstalFromGit+linkFromGit)
-		print("\n\tRepository {}  was download".format(NameOfNewDir))
+		print("\tRepository {}  was download".format(NameOfNewDir))
 	except OSError:
-		print("\n\tThe repository is already in this directory.")
+		print("\\tThe repository is already in this directory.")
 
 def InstallReq(NameOfNewDir):
 	comandInstalLibr = 'pip3 install -r requirements.txt'
@@ -25,12 +25,15 @@ def InstallReq(NameOfNewDir):
 	os.chdir(HomeDir)
 
 def main():
-	# url = "https://github.com/ArthurG/Kijiji-Repost-Headless"
 	print("Input URL: ")
 	url = input()
 	NameOfNewDir = url.split('/')[-1]
 	MakeClone(url)
-	InstallReq(NameOfNewDir)
+	print("Are there dependencies's file in repository?(y/n)")
+	if input() == 'y':
+		InstallReq(NameOfNewDir)
+	else:
+		pass
 
 	
 if __name__ == "__main__":
